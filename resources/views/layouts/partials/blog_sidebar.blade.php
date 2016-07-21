@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 	<section class="box">
 		<form>
 			search here

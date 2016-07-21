@@ -1,7 +1,7 @@
 <section class="navbar box container">
     <nav>
       <span>
-        <a href="http://alanaasmaa.eu/" title="alan aasmaa" id="logo">alan aasmaa</a>
+        <a href="{{url('/')}}" title="alan aasmaa" id="logo">alan aasmaa</a>
       </span>
       <input type="checkbox" id="nav-trigger" />
       <label for="nav-trigger">

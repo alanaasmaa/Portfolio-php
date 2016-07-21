@@ -3,22 +3,15 @@
 @section('title', 'Etusivu')
 @section('description', 'This is a description')
 @section('keywords', 'These, are, keywords')
-@section('styles')
-
-@stop
+@section('styles', '')
 @section('content')
 <section class="container">
     <div class="full box blueBg hero">
         <div class="center whiteText">
-            <hr>
             <h1>TESTING</h1>
             <h5>Tämä • sivusto • on • työn • alla</h5>
-            <p>Lähdekoodi > https://github.com/alanaasmaa/Portfolio</p>
             <hr>
-            <p>
-                <a class="button" href="{{ url('portfolio')}}">Portfolio</a>
-                <a class="button" href="mailto:alan@alanaasmaa.eu" target="_blank">Pistä Viestiä</a>
-            </p>
+            <a href="https://github.com/alanaasmaa/Portfolio">Lähdekoodi > https://github.com/alanaasmaa/Portfolio</a>
         </div>
     </div>
 </section>
@@ -94,4 +87,4 @@
 @section('scripts')
 
 @stop
-@endsection
+@stop

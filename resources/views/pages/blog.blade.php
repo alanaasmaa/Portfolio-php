@@ -42,9 +42,7 @@
                 rel="nofollow" 
                 data-original-title="Share on Google+">
                 <i class="fa fa-google-plus fa-fw" aria-hidden="true"></i></a>
-            <a href="/"><i class="fa fa-linkedin fa-fw" aria-hidden="true"></i></a>
             <a href="/"><i class="fa fa-reddit-alien fa-fw" aria-hidden="true"></i></a>
-            <a href="/"><i class="fa fa-medium fa-fw" aria-hidden="true"></i></a>
             </div>
             <a class="readmore" href="{{url('article/'.$article->slug)}}">Read More</a>
         </article>
