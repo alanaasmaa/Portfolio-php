@@ -276,7 +276,6 @@ th {
 body {
   background: #ddd url("/images/bg.jpg") no-repeat center bottom fixed;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Mono', monospace;
   color: #222;
 }
@@ -966,7 +965,7 @@ article p {
   color: #fff;
   cursor: pointer;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   line-height: 1em;
   text-align: center;
   text-decoration: none;
