@@ -1,0 +1,40 @@
+.login {
+    .has-error {
+        span {
+            color: red;
+            float:left;
+        }
+    }
+    div {
+        margin-bottom: 15px;
+        padding: 5px;
+        input {
+            width: 100%;
+            padding: 6px 12px;
+        }
+    }
+    label {
+            float:left;
+            padding-left: 10px;
+    }
+    button {
+        display: inline-block;
+        position: relative;
+        width: 96%;
+        padding: 5px;
+        line-height: 32px;
+        margin: 5px;
+        border: 0;
+        background: $bluetrans;
+        color: white;
+        box-shadow: 1px 1px 5px 0px $blacktrans;
+        &:hover {
+            background: $blacktrans;
+            color: $blue;
+            transform: scale(1.05);
+        }
+        &:active {
+         	transform: scale(.9);  
+        }
+    }
+}

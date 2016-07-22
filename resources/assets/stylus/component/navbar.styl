@@ -1,24 +1,29 @@
+$navbar-height = 60px;
 .navbar {
 	z-index: 1000;
-	line-height: 60px;
+	line-height: $navbar-height;
   	text-align: center;
 	padding: 0px;
 	width:100%;
 	nav {
 		lost-column: 1/4;
+		.fa {
+			font-size: 1em !important;
+		}
 		&:nth-child(2) {
 			lost-column: 2/4;
 			a:hover {
 				border-bottom: 2px solid;
 				border-color: #1976D2;
-				transition: all linear 0.3s;
-				color: #333;
-			}	
+				transition: all 0.2s ease;
+				color: $black;
+			}
 		}
 		a {
-				color: #333;
-				text-transform: uppercase;
-				font-weight: 600;
+			color: #333;
+			text-transform: uppercase;
+			font-weight: 600;
+			height: $navbar-height;
 		}
 		.fa {
 			font-size: 1.5em;
@@ -40,7 +45,7 @@
 					display: none;
 					position: absolute;
 					padding: 10px;
-					background-color: white;
+					background-color: $white;
 					z-index: 1000;
 				}
 				&>a {
@@ -79,14 +84,15 @@
 					position: inherit;
 					background-color: #2196F3;
 					a {
-						color:#fff;
+						color:$white;
 					}
 				}
 			}
 		}
 	}
-	.navimg {
+}
+.navimg {
 		border-radius: 50%;
-		height: 40px;
-	}
+		height: navimg-height = 40px;
+		margin: -($navbar-height / 2) + navimg-height;
 }

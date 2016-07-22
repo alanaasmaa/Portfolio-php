@@ -11,7 +11,7 @@
     <nav id="nav">
       <ul>
         <li><a class="{!! set_active('/') !!}" href="/">Etusivu</a></li>
-        <li><a class="{!! set_active('blog') !!}" href="{{ url('blog')}}" aria-haspopup="true">Blog</a>
+        <li><a class="{!! set_active('blog') !!}" href="{{ url('blog')}}" aria-haspopup="true">Blog<i class="fa fa-caret-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="/">Design</a></li>
             <li><a href="/">HTML</a></li>
@@ -21,18 +21,24 @@
         </li>
         <li><a class="{!! set_active('portfolio') !!}" href="{{ url('portfolio')}}">Portfolio</a></li>
       </ul>
-      @if (Auth::check())
-        <ul class="center">
-        <li><a href="logout">{{ Auth::user()->name }}</a>
-          </li><img class="navimg" src="{{ Gravatar::src(Auth::user()->email, 40)  }}">
-        </ul>
-      @endif
     </nav>
     <nav>
+      @if (Auth::check())
       <ul>
-        <li><a href="https://github.com/alanaasmaa"><i class="fa fa-github" aria-hidden="true"></i></a></li>     
-        <li><a href="https://www.linkedin.com/in/alanaasmaa"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li><a href="http://codepen.io/thasmog/"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+      <li><a class="{!! set_active('profile/*') !!}" href="/profile/{{ Auth::user()->name}}">{{ Auth::user()->name }}<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <ul>
+            <li><a href="/profile/{{ Auth::user()->name}}">Profile</a></li>
+            <li><a href="/profile/{{ Auth::user()->name}}/edit">Settings</a></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <a href="/profile/{{ Auth::user()->name}}"><img class="navimg" src="{{ Gravatar::src(Auth::user()->email, 40)  }}"></a>
       </ul>
+      @else 
+      <ul>
+        <li><a class="{!! set_active('auth/login') !!}" href="/login">Login</a></li>
+        <li><a class="{!! set_active('auth/register') !!}" href="/register">Register</a></li>
+      </ul>
+      @endif
     </nav>
 </section>

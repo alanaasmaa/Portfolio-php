@@ -19,7 +19,12 @@
                     <dd><i class="fa fa-user"></i> {{$article->user->name}}</dd>
                     <dd><i class="fa fa-clock-o"></i> <time title="{{$article->created_at->format('D, j. F Y')}}">{{$article->created_at->diffForHumans()}}</time></dd>
                     <dd><i class="fa fa-folder"></i> <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a></dd>
-                    <dd><i class="fa fa-tags"></i> @foreach($article->tags as $key => $tag)<a href="/tags/{{ $tag->slug }}">{{ $tag->name }}, </a>@endforeach</dd>
+                    <?php
+                        $tags = $article->tags->map(function ($tag) {
+                            return sprintf('<a href="/tags/%s">%s</a>', $tag['slug'], $tag['name']);
+                        })->all();
+                    ?>
+                    <dd><i class="fa fa-tags"></i> {!! implode(', ', $tags) !!}</dd>
                 </dl>
             </header>
             @markdown((str_limit($article->body, 200, '...')))

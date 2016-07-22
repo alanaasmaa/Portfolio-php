@@ -17,7 +17,7 @@
 			@endforeach
 		</ul>
 	</section>
-	<section class="box tags">
+	<section class="box">
 		<h5 class="text-uppercase">Tags</h5>
 			@foreach($tags as $tag)
 				<span class="tag">
@@ -25,4 +25,6 @@
 				</span>
 			@endforeach
 	</section>
+	<section class="box">
+	<section>
 </div>
