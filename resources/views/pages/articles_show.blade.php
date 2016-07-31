@@ -7,7 +7,7 @@
 <div class="container">
     <section class="sideContent">
         <div class="box">
-            <a href="{{url('articles/'.$article->slug)}}">
+            <a href="{{url('article/'.$article->slug)}}">
                 <img src="{{$article->image}}" class="blog-img">
             </a>
             <div class="post-meta">

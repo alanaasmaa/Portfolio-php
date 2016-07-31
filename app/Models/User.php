@@ -1,8 +1,13 @@
 <?php
 namespace App\Models;
+use Silber\Bouncer\Database\HasRolesAndAbilities;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
+    /**
+     * Silber\Bouncer Trait
+     */
+    use HasRolesAndAbilities;
     /**
      * The attributes that are mass assignable.
      *

@@ -28,7 +28,6 @@
       <li><a class="{!! set_active('profile/*') !!}" href="/profile/{{ Auth::user()->name}}">{{ Auth::user()->name }}<i class="fa fa-caret-down" aria-hidden="true"></i></a>
           <ul>
             <li><a href="/profile/{{ Auth::user()->name}}">Profile</a></li>
-            <li><a href="/profile/{{ Auth::user()->name}}/edit">Settings</a></li>
             <li><a href="/logout">Logout</a></li>
           </ul>
         </li>

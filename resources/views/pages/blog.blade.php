@@ -61,4 +61,4 @@
     </section>
     @include('layouts.partials.blog_sidebar')
 </div>
-@endsection
+@stop

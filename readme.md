@@ -52,3 +52,10 @@ Here you can see how i'm building my Portfolio !
     * User Profile's
 * Public blog ? 
     * Not so public but public
+
+### Laravel Providers
+* Dimsav\Translatable
+* Thomaswelton\LaravelGravatar
+* Indal\Markdown
+* Spatie\CookieConsent
+* Silber\Bouncer

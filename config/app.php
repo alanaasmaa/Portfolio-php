@@ -162,6 +162,7 @@ return [
         Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Indal\Markdown\MarkdownServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
+        Silber\Bouncer\BouncerServiceProvider::class,
 
     ],
 
@@ -213,6 +214,7 @@ return [
         */
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Markdown' => Indal\Markdown\Facade::class,
+        'Bouncer' => Silber\Bouncer\BouncerFacade::class,
     ],
 
 ];
