@@ -13,16 +13,19 @@ elixir.config.sourcemaps = true;
 elixir(function(mix) {
 
 	mix
-    .stylus('app.styl', null, {
-        use: [
-            axis(),
-            rupture(),
-            poststylus(['lost'])
-        ]
-    })
+    .stylus([
+        'app.styl',
+        'admin.styl'
+        ], null, {
+            use: [
+                axis(),
+                rupture(),
+                poststylus(['lost'])
+    ]})
 
     .version([
-    	'css/app.css'
+    	'css/app.css',
+        'css/admin.css'
     ])
     /*.html(
         'storage/framework/views/*',
@@ -45,8 +48,6 @@ elixir(function(mix) {
     })
     .browserSync({ 
         proxy: 'cv.dev',
-        notify: false,
-        host: '192.168.10.43'
-
+        notify: false
     });
 });

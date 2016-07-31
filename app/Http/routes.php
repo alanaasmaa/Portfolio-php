@@ -20,8 +20,7 @@ Route::get('portfolio', 'BlogController@portfolio');
 Route::get('portfolio/{slug}', 'BlogController@portfolioItem');
 
 Route::group(['middleware' => 'admin','namespace' => 'admin','prefix' => 'admin'], function () {
-    // TEST ROUTE ONLY ROUTE
-    Route::get('/', function () {echo 'Welcome to your ADMINISTRATOR page '. Auth::user()->email .'.';});
+    Route::get('/', 'AdminController@index');
 });
 
 Route::group(['middleware' => 'auth'], function () {
