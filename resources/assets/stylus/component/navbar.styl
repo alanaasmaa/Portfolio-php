@@ -38,24 +38,49 @@ $navbar-height = 60px;
 			display: inline-flex;
 			margin: 0;
 			li {
-				&:hover ul{
-					display: block;
+				&:hover {
+					ul {
+						visibility: visible;
+						opacity: 1;
+						max-height: 500px;
+					}
+					a:first-child:nth-last-child(2):before {
+						border-top: 7px solid $blue;
+						transform: rotate(-180deg);
+					}
 				}
 				ul {
-					display: none;
+					display: block;
+					visibility: hidden;
+					opacity: 0;
 					position: absolute;
-					padding: 10px;
-					background-color: $white;
+					background-color: $whitetrans;
 					z-index: 1000;
+					max-height: 0;
+					transition: 0.2s ease-in-out;
 				}
-				&>a {
-					margin: 0 10px;
+				a {
+					margin: 0 15px;
 					border-bottom: 2px solid;
 					border-color: transparent;
 					line-height: 20px;
+					position: relative;
 					&.active {
 						border-bottom: 2px solid;
 						border-color: #2196F3;
+					}
+					&:first-child:nth-last-child(2):before {
+						content:""; 
+						display: inline-block;
+						position: absolute; 
+						height:0; 
+						width: 0; 
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						border-top: 7px solid $darkgray;
+						top: 37% ;
+						right:-12px;
+						transition: transform 0.2s ease-in-out;
 					}
 				}
 			}

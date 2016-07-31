@@ -45,6 +45,8 @@ elixir(function(mix) {
     })
     .browserSync({ 
         proxy: 'cv.dev',
-        notify: false
+        notify: false,
+        host: '192.168.10.43'
+
     });
 });

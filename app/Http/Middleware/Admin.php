@@ -38,7 +38,7 @@ class Admin {
                 return redirect()->guest('login');
             }
         } else {
-            if ($this->auth->user()->is('admin')) {
+            if ($this->auth->user()->can('access-admin')) {
                 return $next($request);
             } else {
                 return redirect()->guest('/')->with('error', 'You are NOT allowed!');

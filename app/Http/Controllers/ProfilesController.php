@@ -8,7 +8,7 @@ use Auth;
 
 class ProfilesController extends Controller
 {
-    public function show($username)
+    public function show($id)
     {
         echo 'Sorry '. Auth::user()->email .' but profiles page is not ready yet.';
     }

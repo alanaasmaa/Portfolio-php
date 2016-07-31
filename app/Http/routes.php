@@ -25,5 +25,5 @@ Route::group(['middleware' => 'admin','namespace' => 'admin','prefix' => 'admin'
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('profile/{username}', ['as' => '{username}', 'uses' => 'ProfilesController@show']);
+	Route::get('profile/{id}', ['as' => '{id}', 'uses' => 'ProfilesController@show']);
 });

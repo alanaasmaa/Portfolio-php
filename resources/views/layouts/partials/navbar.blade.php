@@ -11,7 +11,7 @@
     <nav id="nav">
       <ul>
         <li><a class="{!! set_active('/') !!}" href="/">Etusivu</a></li>
-        <li><a class="{!! set_active('blog') !!}" href="{{ url('blog')}}" aria-haspopup="true">Blog<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+        <li><a class="{!! set_active('blog') !!}" href="{{ url('blog')}}" aria-haspopup="true">Blog</a>
           <ul>
             <li><a href="/">Design</a></li>
             <li><a href="/">HTML</a></li>
@@ -25,10 +25,13 @@
     <nav>
       @if (Auth::check())
       <ul>
-      <li><a class="{!! set_active('profile/*') !!}" href="/profile/{{ Auth::user()->name}}">{{ Auth::user()->name }}<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+      <li><a class="{!! set_active('profile/*') !!}" href="/profile/{{ Auth::user()->id}}">{{ Auth::user()->name }}</a>
           <ul>
-            <li><a href="/profile/{{ Auth::user()->name}}">Profile</a></li>
+            <li><a href="/profile/{{ Auth::user()->id}}">Profile</a></li>
             <li><a href="/logout">Logout</a></li>
+            @can ('access-admin')
+                <li><a href="/admin">Admin Panel</a></li>
+            @endcan
           </ul>
         </li>
         <a href="/profile/{{ Auth::user()->name}}"><img class="navimg" src="{{ Gravatar::src(Auth::user()->email, 40)  }}"></a>
