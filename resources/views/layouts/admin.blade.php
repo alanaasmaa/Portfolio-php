@@ -7,8 +7,8 @@
         @include('layouts.admin.shim')
     </head>
     <body>
-        @include('layouts.admin.navbar')
         @include('errors.list') 
+        @include('layouts.admin.aside')
         @yield('content')
         @include('cookieConsent::index')
     </body>
