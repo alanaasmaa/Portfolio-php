@@ -1,33 +1,21 @@
-//Axis Resets
-border-box-html();
-global-reset();
-normalize-css();
-//Axis Settings
-$default-color = $blue;
-$font-stack = 'Roboto Mono', monospace;
-$font-color = $black;
-//Lost Settings
-@lost flexbox flex;
-@lost gutter 15px;
-//Rupture Settings
-rupture.mobile-cutoff = 450px;
-//Custom Colors
-$bluetrans = alpha($blue,.9);
-$whitetrans = alpha($white,.9);
-$blacktrans = alpha($black,.9);
-$darkgray = alpha(#727272,1);
+//Settings
+@import 'settings/resets';
+@import 'settings/axis';
+@import 'settings/lost';
+@import 'settings/rupture';
+@import 'settings/colors';
 //Page CSS
-@import 'component/body';
-@import 'component/navbar';
-@import 'component/footer';
-@import 'component/home';
-@import 'component/blog';
-@import 'component/sidebar';
-@import 'component/login';
-@import 'component/cookies';
+@import 'main/body';
+@import 'main/navbar';
+@import 'main/footer';
+@import 'main/home';
+@import 'main/blog';
+@import 'main/sidebar';
+@import 'main/login';
+@import 'main/cookies';
 //Misc CSS
-@import 'component/notifications';
-@import 'component/fontawesome';
-@import 'component/animations';
+@import 'main/notifications';
+@import 'main/fontawesome';
+@import 'main/animations';
 // Fonts etc. 
 @import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono';

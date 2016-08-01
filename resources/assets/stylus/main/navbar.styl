@@ -1,0 +1,123 @@
+$navbar-height = 60px;
+.navbar {
+	z-index: 1000;
+	line-height: $navbar-height;
+  	text-align: center;
+	padding: 0px !important;
+	width:100%;
+	nav {
+		lost-column: 1/4;
+		.fa {
+			font-size: 1em !important;
+		}
+		&:nth-child(2) {
+			lost-column: 2/4;
+			a:hover {
+				border-bottom: 2px solid;
+				border-color: #1976D2;
+				transition: all 0.2s ease;
+				color: $black;
+			}
+		}
+		a {
+			color: #333;
+			text-transform: uppercase;
+			font-weight: 600;
+			height: $navbar-height;
+		}
+		.fa {
+			font-size: 1.5em;
+		}
+		#nav-trigger {
+				display: none;
+		}
+		label[for="nav-trigger"] {
+				display: none;
+		}
+		ul {
+			display: inline-flex;
+			margin: 0;
+			li {
+				&:hover {
+					ul {
+						visibility: visible;
+						opacity: 1;
+						max-height: 500px;
+					}
+					a:first-child:nth-last-child(2):before {
+						border-top: 7px solid $blue;
+						transform: rotate(-180deg);
+					}
+				}
+				ul {
+					display: block;
+					visibility: hidden;
+					opacity: 0;
+					position: absolute;
+					background-color: $whitetrans;
+					z-index: 1000;
+					max-height: 0;
+					transition: 0.2s ease-in-out;
+				}
+				a {
+					margin: 0 15px;
+					border-bottom: 2px solid;
+					border-color: transparent;
+					line-height: 20px;
+					position: relative;
+					&.active {
+						border-bottom: 2px solid;
+						border-color: #2196F3;
+					}
+					&:first-child:nth-last-child(2):before {
+						content:""; 
+						display: inline-block;
+						position: absolute; 
+						height:0; 
+						width: 0; 
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						border-top: 7px solid $darkgray;
+						top: 37% ;
+						right:-12px;
+						transition: transform 0.2s ease-in-out;
+					}
+				}
+			}
+		}
+		+below(1000px){
+			lost-column: 1 !important;
+			&:last-child {
+				display:none;
+			}
+			&:nth-child(2) {
+				display:none;
+			}
+			label[for="nav-trigger"] {
+				display: block;
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				cursor: pointer;
+			}
+			ul {
+				flex-wrap: wrap;
+				padding: 0;
+				display: block;
+				line-height: 40px;
+				li ul {
+					position: inherit;
+					background-color: #2196F3;
+					a {
+						color:$white;
+					}
+				}
+			}
+		}
+	}
+}
+.navimg {
+		border-radius: 50%;
+		height: navimg-height = 40px;
+		margin: (($navbar-height - navimg-height) / 2);
+}
