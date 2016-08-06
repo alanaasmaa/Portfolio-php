@@ -3,13 +3,52 @@ aside {
     position: absolute;
     background-color: blue !important;
     color: white;
-    a {
-        line-height: 60px;
-        display:flex;
+    header {
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid silver;
         img {
-            height: 40px;
+            height: 80px;
             margin: 10px;
             border-radius: 50%;
         }
+        ul {
+            display: inline-flex;
+            li {
+                margin: 10px;
+                position: relative;
+                &:hover span {
+                    visibility: visible;
+                }
+            }
+            span {
+                    position: absolute;
+                    width: 65px;
+                    background: $navytrans;
+                    line-height: 30px;
+                    text-align: center;
+                    visibility: hidden;
+                    font-size: 0.8em;
+                    top: 30px;
+                    left: 50%;
+                    margin-left: -34px;
+                    z-index: 999;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 100%;
+                        left: 50%;
+                        margin-left: -8px;
+                        width: 0;
+                        height: 0;
+                        border-bottom: 8px solid $navytrans;
+                        border-right: 8px solid transparent;
+                        border-left: 8px solid transparent;
+                    }
+                }
+            }
+        }
+    section {
+        padding-top: 15px;
     }
 }
