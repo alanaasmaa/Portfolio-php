@@ -59,3 +59,6 @@ Here you can see how i'm building my Portfolio !
 * Indal\Markdown
 * Spatie\CookieConsent
 * Silber\Bouncer
+
+###Admin panel Sneak peak 6.8.2016
+![Admin Panel](http://i.imgur.com/lro6D5D.png)
