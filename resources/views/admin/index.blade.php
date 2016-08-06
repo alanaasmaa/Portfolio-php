@@ -10,7 +10,7 @@
         <span class="orangeBg">
             <i class="fa fa-cog"></i>
         </span>
-        visits today
+        <p>visits today</p>
      </div>
      <div class="fourth box info-box">
         <span class="redBg">
@@ -28,7 +28,7 @@
         <span class="navyBg">
             <i class="fa fa-cog"></i>
         </span>
-        Today's earnings
+        Comments
      </div>
     </section>
 </section>

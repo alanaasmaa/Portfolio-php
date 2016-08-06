@@ -1198,7 +1198,7 @@ body {
   height: 90px;
   width: 90px;
   line-height: 90px;
-  display: block;
+  float: left;
   font-size: 2em;
   color: #fff;
   margin: -15px;
