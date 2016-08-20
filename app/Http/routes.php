@@ -19,10 +19,10 @@ Route::get('article/{slug}', 'BlogController@article');
 Route::get('portfolio', 'BlogController@portfolio');
 Route::get('portfolio/{slug}', 'BlogController@portfolioItem');
 
-Route::group(['middleware' => 'admin','namespace' => 'admin','prefix' => 'admin'], function () {
+Route::group(['middleware' => 'admin', 'namespace' => 'admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::get('profile/{id}', ['as' => '{id}', 'uses' => 'ProfilesController@show']);
+    Route::get('profile/{id}', ['as' => '{id}', 'uses' => 'ProfilesController@show']);
 });

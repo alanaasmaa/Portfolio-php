@@ -528,6 +528,7 @@ img {
   box-shadow: 1px 2px 5px 0px rgba(34,34,34,0.9);
   padding: 15px;
   word-wrap: break-word;
+  position: relative;
 }
 .blueBg {
   background-color: rgba(0,116,217,0.9);
@@ -704,7 +705,7 @@ img {
   transition: transform 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
   .navbar nav {
     -webkit-box-flex: 0 !important;
     flex: 0 0 auto !important;
@@ -730,7 +731,7 @@ img {
   .navbar nav label[for="nav-trigger"] {
     display: block;
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 15px;
     cursor: pointer;
   }
@@ -862,7 +863,15 @@ article p {
 }
 .social-share {
   position: absolute;
-  margin-left: 15px;
+  margin: 0 15px;
+}
+.social-share.right {
+  right: 0;
+}
+@media only screen and (max-width: 1050px) {
+  .social-share.right {
+    right: initial;
+  }
 }
 .social-share a {
   display: -webkit-inline-box;
@@ -880,6 +889,19 @@ article p {
 .social-share a .fa {
   text-shadow: 1px 1px 1px #fff;
 }
+.source {
+  color: #aaa;
+  padding-bottom: 0;
+  position: absolute;
+}
+.source:hover {
+  color: #0074d9;
+}
+@media only screen and (max-width: 1050px) {
+  .source {
+    position: initial;
+  }
+}
 .sidebar {
   -webkit-box-flex: 0;
   flex: 0 0 auto;
@@ -896,7 +918,7 @@ article p {
   margin-right: 0;
   margin-left: auto;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
   .sidebar {
     display: none;
   }
@@ -950,7 +972,7 @@ article p {
   margin-right: 0;
   margin-left: auto;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1050px) {
   .sideContent {
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -1162,9 +1184,6 @@ article p {
 }
 @import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono';
 
-body {
-  margin: 0 10px;
-}
 .admin-main {
   -webkit-box-flex: 0;
   flex: 0 0 auto;

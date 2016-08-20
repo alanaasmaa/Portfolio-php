@@ -18,7 +18,6 @@ class BSidebarComposer
     public function __construct()
     {
         // Dependencies automatically resolved by service container...
-        
     }
 
     /**

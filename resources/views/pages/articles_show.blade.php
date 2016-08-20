@@ -1,30 +1,62 @@
 @extends('layouts.master')
-
-@section('title', 'Blog')
-@section('description', 'This is a description')
-@section('keywords', 'These, are, keywords')
+<?php
+    $tags = $article->tags->map(function ($tag) {
+        return sprintf('<a href="/tags/%s">%s</a>', $tag['slug'], $tag['name']);
+    })->all();
+    $keywords = $article->tags->map(function ($tag) {
+        return sprintf('%s',  $tag['name']);
+    })->all();
+?>
+@section('title', $article->title)
+@section('description', $article->title)
+@section('keywords', 'blog, ' . implode(', ', $keywords))
+@section('author', $article->user->name)
 @section('content')
 <div class="container">
     <section class="sideContent">
-        <div class="box">
+        <article id="{{$article->id}}" class="box">
             <a href="{{url('article/'.$article->slug)}}">
-                <img src="{{$article->image}}" class="blog-img">
+                <img src="{{$article->image}}">
             </a>
-            <div class="post-meta">
-            <h4>{{$article->title}}</h4>
-                <ul>
-                    <li><i class="fa fa-user"></i> {{$article->user->name}}</li>
-                    <li><i class="fa fa-clock-o"></i> {{$article->created_at->diffForHumans()}}</li>
-                    <li><i class="fa fa-folder"></i> <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a></li>
-                    <li><i class="fa fa-tags"></i> @foreach($article->tags as $key => $tag)<a href="/tags/{{ $tag->slug }}"> {{ $tag->name }}</a>@endforeach</li>
-                </ul>
-            </div>
-            <p>{!! $article->body_html !!}</p>
+            <header>
+                <a href="{{url('article/'.$article->slug)}}">
+                    <h4>{{$article->title}}</h4>
+                </a>
+                <dl>
+                    <dd><i class="fa fa-user"></i> {{$article->user->name}}</dd>
+                    <dd><i class="fa fa-clock-o"></i> <time title="{{$article->created_at->format('D, j. F Y')}}">{{$article->created_at->diffForHumans()}}</time></dd>
+                    <dd><i class="fa fa-folder"></i> <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a></dd>
+                    <dd><i class="fa fa-tags"></i> {!! implode(', ', $tags) !!}</dd>
+                </dl>
+            </header>
+            @markdown(($article->body))
             @unless(is_null($article->original) || empty($article->original))
-			    <p>Source:<br>{{ $article->original }}</p>
+			    <p class="source"><b>Source:</b> {!!str_limit($article->original, 50, '...')!!}</p>
 		    @endunless
-        </div>
+            <div class="social-share right">
+            <a href="http://www.facebook.com/sharer.php?u={{rawurlencode(url('article/'.$article->slug))}}&title={{$article->title}}" 
+                onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" 
+                rel="nofollow" 
+                data-original-title="Share on Facebook">
+                <i class="fa fa-facebook-official fa-fw" aria-hidden="true">
+                </i>
+            </a>
+            <a href="http://www.twitter.com/share?url={{rawurlencode(url('article/'.$article->slug))}}&title={{$article->title}}" 
+                onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" 
+                rel="nofollow" 
+                data-original-title="Share on Twitter">
+                <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="https://plus.google.com/share?url={{rawurlencode(url('article/'.$article->slug))}}&title={{$article->title}}" 
+                onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;" 
+                rel="nofollow" 
+                data-original-title="Share on Google+">
+                <i class="fa fa-google-plus fa-fw" aria-hidden="true"></i></a>
+            <a href="/"><i class="fa fa-reddit-alien fa-fw" aria-hidden="true"></i></a>
+            </div>
+        </article>
+        {!! $article->nextPageUrl() !!}
     </section>
     @include('layouts.partials.blog_sidebar')
 </div>
-@endsection
+@stop
