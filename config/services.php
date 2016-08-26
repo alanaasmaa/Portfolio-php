@@ -34,10 +34,4 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-
-    'algolia' => [
-        'app_id' => env('ALGOLIOSEARCH_ID'),
-        'api_key' => env('ALGOLIOSEARCH_KEY'),
-    ],
-
 ];

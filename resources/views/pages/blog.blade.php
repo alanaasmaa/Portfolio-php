@@ -62,3 +62,24 @@
     @include('layouts.partials.blog_sidebar')
 </div>
 @stop
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script>
+  var client = algoliasearch('F0SF1U1JU9', '5c3af1f1e8d617583f495601989355ca');
+  var index = client.initIndex('getstarted_actors');
+  autocomplete('#search-input', { hint: false }, [
+    {
+      source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+      displayKey: 'name',
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion._highlightResult.name.value;
+        }
+      }
+    }
+  ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+    console.log(suggestion, dataset);
+  });
+</script>
+@stop

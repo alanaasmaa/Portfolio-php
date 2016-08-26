@@ -7,11 +7,11 @@
   "devDependencies": {
     "bootstrap-sass": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
     "gulp-stylus": "^2.5.0",
     "laravel-elixir": "^6.0.0-4",
     "laravel-elixir-browsersync-official": "^1.0.0",
     "laravel-elixir-imagemin": "^0.2.3",
-    "laravel-elixir-minify-html": "^1.0.5",
     "laravel-elixir-stylus": "^2.0.2",
     "poststylus": "^0.2.3"
   },

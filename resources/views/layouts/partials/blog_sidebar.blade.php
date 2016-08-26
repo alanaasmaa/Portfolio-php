@@ -1,7 +1,7 @@
 <div class="sidebar" id="sidebar">
 	<section class="box">
 		<form>
-			search here
+			<input type="text" id="search-input" placeholder='Search' />
 		</form>
 	</section>
 	<section class="box">

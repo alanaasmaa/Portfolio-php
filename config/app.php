@@ -163,6 +163,7 @@ return [
         Indal\Markdown\MarkdownServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Silber\Bouncer\BouncerServiceProvider::class,
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
 
     ],
 

@@ -17,7 +17,6 @@ Route::get('blog', 'BlogController@index');
 Route::get('article/{slug}', 'BlogController@article');
 Route::get('portfolio', 'BlogController@portfolio');
 Route::get('portfolio/{slug}', 'BlogController@portfolioItem');
-Route::get('search', 'SearchController@index');
 
 Route::group(['middleware' => 'admin', 'namespace' => 'admin', 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index');

@@ -55,7 +55,6 @@
             <a href="/"><i class="fa fa-reddit-alien fa-fw" aria-hidden="true"></i></a>
             </div>
         </article>
-        {!! $article->nextPageUrl() !!}
     </section>
     @include('layouts.partials.blog_sidebar')
 </div>

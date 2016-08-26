@@ -2,8 +2,10 @@
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 class Article extends Model
 {
+    use AlgoliaEloquentTrait;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $appends = ['tag_list', 'body_html'];
