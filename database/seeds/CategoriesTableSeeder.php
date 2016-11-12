@@ -22,7 +22,7 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         foreach (range(1, 10) as $index) {
-            $categoryIds = \App\Models\Category::whereParentId('0')->lists('id')->toArray();
+            $categoryIds = \App\Models\Category::whereParentId('0')->pluck('id')->toArray();
 
             \App\Models\Category::create([
                 'name' => $faker->unique()->word,

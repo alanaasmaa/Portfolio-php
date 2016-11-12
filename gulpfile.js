@@ -2,9 +2,9 @@ var gulp = require('gulp'),
     elixir = require('laravel-elixir'),
     poststylus = require('poststylus'),
     rupture = require('rupture'),
-    lost = require('lost'),
     axis = require('axis'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    cssnano = require('gulp-cssnano');
 
 require('laravel-elixir-stylus');
 require('laravel-elixir-imagemin');
@@ -25,6 +25,18 @@ elixir.extend('compress', function() {
     .watch('./resources/views/**/*.blade.php');
 });
 
+elixir.extend('cssnano', function() {
+    new elixir.Task('cssnano', function() {
+        return gulp.src('./public/css/*.css')
+            .pipe(cssnano({
+                safe:true,
+                autoprefixer: {add:true}
+            }))
+            .pipe(gulp.dest('./public/css/'));
+    })
+    .watch('./public/css/*.css');
+});
+
 elixir(function(mix) {
 
 	mix
@@ -40,13 +52,14 @@ elixir(function(mix) {
             use: [
                 axis(),
                 rupture(),
-                poststylus(['lost'])
+                poststylus(['lost']),
+                autoprefixer()
     ]})
     .version([
     	'css/app.css',
         'css/admin.css'
     ])
-    .scripts([
+    .webpack([
         'components/**/*.js',
         'app.js'
     ])
@@ -55,9 +68,10 @@ elixir(function(mix) {
         progressive: true,
         interlaced: true
     })
-    .browserSync({ 
+    .browserSync({
         proxy: 'cv.dev',
         notify: false
     })
+    .cssnano()
     .compress();
 });

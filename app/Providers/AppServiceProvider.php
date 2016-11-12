@@ -20,9 +20,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(
             'layouts.partials.blog_sidebar',
             'App\Http\ViewComposers\BSidebarComposer'
-            );  
+            );
         /**
-        * Enable JosephSilber/bouncer cache 
+        * Enable JosephSilber/bouncer cache
         * Rembmber to refresh the cache whenever you make changes to user's abilities/roles.
         */
         Bouncer::cache();
